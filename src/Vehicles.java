@@ -1,8 +1,7 @@
-public class Vehicles
-{}
+
 
     //INTERFACES
-    interface Vehicle{
+    interface Vehicles {
         int speed=120;
         String color="blue";
 
@@ -66,7 +65,7 @@ public class Vehicles
 
 //Vehicles
 
-    class Motorcycle extends EnginedVehicle implements Vehicle, TurboEngine{
+    class Motorcycle extends EnginedVehicle implements Vehicles, TurboEngine{
         @Override
         public void turnIt() {
             System.out.println("Motorcycle is working.");
@@ -87,7 +86,7 @@ public class Vehicles
         }
     }
 
-class Bicycle extends TwoWheel implements Vehicle{
+class Bicycle extends TwoWheel implements Vehicles {
         String model;
 
     @Override

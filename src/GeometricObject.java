@@ -3,9 +3,9 @@ public class GeometricObject {
 
  private String color;
  private Boolean fillStatus;
-private Date dateCreated = new Date();
+private final Date dateCreated = new Date();
 
- void GeometricObject(){}
+ GeometricObject(){}
 
 
     public String getColor(){return color;}

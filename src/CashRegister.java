@@ -1,6 +1,4 @@
-import java.util.Scanner;
-
-   class CashRegister {
+ class CashRegister {
 
     double totalSale;
     double dailyProfit;
@@ -48,7 +46,6 @@ import java.util.Scanner;
                 calculateTotalsale(price);
                 increaseSellofDesert();
                 break;
-            case 5:
         }
     }
 
@@ -74,26 +71,34 @@ class Cashier {
 
     public Cashier() {
         CashRegister cashRegister = new CashRegister();
-        workPeriod();
+
     }
-    public Cashier(String name) {
-        CashRegister cashRegister = new CashRegister(name);
-        workPeriod();
-    }
+    public Cashier(String name) {CashRegister cashRegister = new CashRegister(name);}
 
     public void workPeriod() {
         CashRegister cashRegister = new CashRegister();
-        Scanner input = new Scanner(System.in);
+        SafeScannerForInt scanner = new SafeScannerForInt();
         int choice;
         double price;
-        do {
+        while (true) {
             System.out.println("Choice a product 1-Salad 2-Burger 3-Pizza 4-Desert ENTER '5' FOR EXIT");
-             choice= input.nextInt();
+choice=scanner.numberFormatExpectionHandler();
+if(choice==5) {break;}
+while(choice<1||choice>5) {
+    System.out.println("Please enter a valid choice");choice=scanner.numberFormatExpectionHandler();
+}
+
             System.out.println("What's the price of product ?");
-             price = input.nextDouble();
+
+price=scanner.numberFormatExpectionHandler();
+while(price==0){
+    System.out.println("Price cannot be zero");price=scanner.numberFormatExpectionHandler();
+}
            cashRegister.calculate(choice, price);
-        }while(choice != 5);
+        }
        cashRegister.saleSlip();
 }
     }
+
+
 

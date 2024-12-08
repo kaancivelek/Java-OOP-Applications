@@ -5,15 +5,20 @@ public class Main {
     public static void main(String[] args) {
 Scanner input = new Scanner(System.in);
 
-        System.out.println("Choose your snippet.\n1-Cash Register\n2-GPS Receiver+" +
-                "\n3-Geometric Objects\n4-University Student\n5-Vehicles\n");
+        System.out.println("""
+                Choose your snippet;
+                1-Cash Register
+                2-GPS Receiver
+                3-Geometric Objects
+                4-University Student
+                5-Vehicles
+                """);
         int choice = input.nextInt();
         switch (choice) {
 
-            case 1: Cashier cashier = new Cashier();
-            cashier.workPeriod();
-            Cashier cashier2 = new Cashier("Kaan");
-            cashier2.workPeriod();
+            case 1:
+                //Cashier cashier = new Cashier();cashier.workPeriod();
+            Cashier cashier2 = new Cashier("Kaan"); cashier2.workPeriod();
             break;
 
             case 2:GpsReceiver gpsReceiver = new GpsReceiver();
@@ -22,7 +27,7 @@ Scanner input = new Scanner(System.in);
             Satellite satellite2 = new Satellite(gpsReceiver);
             break;
 
-            case 3: GeometricObject geometricObject = new GeometricObject();
+            case 3:
             Circle circle = new Circle();
             circle.setRadius(2);
             circle.circleInfo();
@@ -41,7 +46,7 @@ Scanner input = new Scanner(System.in);
             bicycle.turnIt();
             bicycle.makeBalance();
             bicycle.drive();
-                System.out.println("");
+                System.out.println(" ");
             Motorcycle motorcycle = new Motorcycle();
             motorcycle.turnIt();
             motorcycle.troubleCheck();
