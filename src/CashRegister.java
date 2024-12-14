@@ -85,7 +85,8 @@ class Cashier {
 choice=scanner.numberFormatExpectionHandler();
 if(choice==5) {break;}
 while(choice<1||choice>5) {
-    System.out.println("Please enter a valid choice");choice=scanner.numberFormatExpectionHandler();
+    System.out.println("Please enter a valid choice");
+    choice=scanner.numberFormatExpectionHandler();
 }
 
             System.out.println("What's the price of product ?");

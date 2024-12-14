@@ -11,8 +11,11 @@ class SafeScannerForInt {
         while (!isValid) {
             input = scanner.nextLine();
             try {output = Integer.parseInt(input);isValid = true;}
-            catch (NumberFormatException e) {System.out.println("Please enter a valid number");}
+
+
+            catch (NumberFormatException e) {System.out.println("Please enter a valid input");}
         }
+
 
         return output;
 

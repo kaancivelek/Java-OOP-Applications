@@ -3,8 +3,7 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-Scanner input = new Scanner(System.in);
-
+SafeScannerForInt scanner = new SafeScannerForInt();
         System.out.println("""
                 Choose your snippet;
                 1-Cash Register
@@ -12,8 +11,12 @@ Scanner input = new Scanner(System.in);
                 3-Geometric Objects
                 4-University Student
                 5-Vehicles
+                6-Prime Number Control
+                7-Triangle Creator
                 """);
-        int choice = input.nextInt();
+        int choice = scanner.numberFormatExpectionHandler();
+        while(choice<1||choice>7){System.out.println("Enter a defined choose.");choice=scanner.numberFormatExpectionHandler();}
+
         switch (choice) {
 
             case 1:
@@ -53,6 +56,15 @@ Scanner input = new Scanner(System.in);
             motorcycle.hyperSpeed();
             motorcycle.drive();
             break;
+
+            case 6:
+                boolean primestatus;
+                primestatus= PrimeNumbersControl.primeNumberChecker();
+                System.out.println("Prime status is: "+primestatus);
+                break;
+
+                case 7:
+                TriangleCreator triangle = new TriangleCreator();
         }
         }
     }
